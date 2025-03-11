@@ -12,4 +12,10 @@ r = requests.get(url)
 
 results = r.json()
 
-print(results['reports'][0]['url'])
+fr_url =  results['reports'][0]['url']
+
+fr = requests.get(fr_url + f"api_keys{congress_api_key}") #I think some code is missing here
+
+result = fr.json()
+
+print(result)
